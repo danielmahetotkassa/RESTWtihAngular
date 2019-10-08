@@ -20,7 +20,7 @@ export class PersonaddComponent {
   createPerson(): void {
     this.personService.createPerson(this.person)
         .subscribe( data => {
-          alert("User created successfully.");
+          alert("Person Added successfully.");
         });
 
   };
