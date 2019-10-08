@@ -1,0 +1,43 @@
+<div class="col-md-6">
+  <h2 class="text-center">Search Person</h2>
+<form>
+  
+
+  <div class="form-group">
+ 
+    <input  placeholder="First Name / Last Name" name="first_name" class="form-control" id="firstName">
+  </div>
+
+  
+
+  <button class="btn btn-success" (click)="getPersons(first_name)">Search Person</button>
+
+
+
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Update Record</th>
+        <th scope="col">Delete Record</th>
+  
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person1 of person">
+        <td>{{person1.id}}</td>
+        <td>{{person1.first_name}}</td>
+        <td>{{person1.last_name}}</td>
+        <td><button type="button" class="btn btn-warning" >update</button> </td>
+        <td><button type="button" class="btn btn-danger" (click) = "deletePerson(person1)">Delete</button> </td>
+       
+    </tr>
+     
+    </tbody>
+  </table>
+
+
+</form>
+</div>
