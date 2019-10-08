@@ -12,8 +12,8 @@ import { Person2 } from '../model/person2';
 export class PersonService {
 
   private baseUrl = 'https://young-woodland-47552.herokuapp.com/persons';
-  private personUrl = 'http://localhost:8080/api';
-  private postUrl =   'http://localhost:8080/';
+  private personUrl = 'https://restendpoints.herokuapp.com/api';
+  private postUrl =   'https://restendpoints.herokuapp.com/';
 
 person: Person[];
 person2 : Person2 = new Person2();
