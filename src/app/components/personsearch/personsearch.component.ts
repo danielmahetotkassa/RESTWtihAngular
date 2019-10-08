@@ -12,8 +12,7 @@ export class PersonsearchComponent implements OnInit {
 
   
   person: Person[];
-  person2: Person2;
-
+ 
   constructor(private personService: PersonService) {
     this.person = [];
   }
