@@ -10,8 +10,9 @@ import { PersonService } from 'src/app/services/person.service';
 export class PersonsearchComponent implements OnInit {
 
 
-  first_name: string;
+  
   person: Person[];
+  person2: Person2;
 
   constructor(private personService: PersonService) {
     this.person = [];
