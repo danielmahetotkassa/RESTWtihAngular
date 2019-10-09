@@ -20,9 +20,9 @@ export class PersonsearchComponent implements OnInit {
   ngOnInit() {
   }
 
-getPersonsSearch(name: string): void{
+getPersonsSearch(person): void{
 
-  this.personService.getPersonBasedOnName(name).subscribe((person: Person[])=>{
+  this.personService.getPersonBasedOnName(person).subscribe((person: Person[])=>{
     this.person = person;
 });
 }
