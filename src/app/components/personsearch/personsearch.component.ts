@@ -10,9 +10,9 @@ import { PersonService } from 'src/app/services/person.service';
 export class PersonsearchComponent implements OnInit {
 
 
-  
   person: Person[];
- 
+  person2: Person = new Person(2, "Daniel","belay");
+
   constructor(private personService: PersonService) {
     this.person = [];
   }
@@ -20,12 +20,21 @@ export class PersonsearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  getPersons(): void{
+getPersonsSearch(name: string): void{
 
-    this.personService.getPerson().subscribe((person: Person[])=>{
-      this.person = person;
+  this.personService.getPersonBasedOnName(name).subscribe((person: Person[])=>{
+    this.person = person;
+});
+}
+
+deletePerson(person): void{
+  this.personService.deletePerson(person)
+  .subscribe( data => {
+    alert("Person Deleted successfully.");
   });
+
+}
 
 } 
 
-}
+

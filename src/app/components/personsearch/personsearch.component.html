@@ -1,18 +1,18 @@
-<div class="col-md-6">
-  <h2 class="text-center">Search Person</h2>
 <form>
+  <div class="col-md-6">
+  <h2 class="text-center">Search Person</h2>
+
   
 
   <div class="form-group">
  
-    <input  type = "text"  placeholder="First Name / Last Name" name="first_name" class="form-control" id="firstName">
+    <input type = "text" [(ngModel)]="person2.first_name" 
+    placeholder="First Name / Last Name" name="first_name" class="form-control" id="first_name">
   </div>
 
-  
+  <button class="btn btn-success" (click)="getPersonsSearch(person2)">Search Person</button>
 
-  <button class="btn btn-success" (click)="getPersons()">Search Person</button>
-
-
+<br><br>
 
   <table class="table">
     <thead class="thead-light">
@@ -39,5 +39,5 @@
   </table>
 
 
-</form>
 </div>
+</form>

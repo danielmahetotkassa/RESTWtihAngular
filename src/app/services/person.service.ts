@@ -11,7 +11,6 @@ import { Person2 } from '../model/person2';
 })
 export class PersonService {
 
-  private baseUrl = 'https://young-woodland-47552.herokuapp.com/persons';
   private personUrl = 'https://restendpoints.herokuapp.com/api';
   private postUrl =   'https://restendpoints.herokuapp.com/';
 
@@ -19,18 +18,6 @@ person: Person[];
 person2 : Person2 = new Person2();
 
   constructor(private http: HttpClient) { }
-
-  list(): Observable<Person[]> {
-
-    const url = `${this.baseUrl}/`;
-    return this.http.get(url).pipe(
-      map((data: any[]) => data.map((person: any) => new Person(
-      person.id,
-      person.first_name,
-      person.last_name,
-      ))),
-    );
-  }
 
   public getPerson() {
     return this.http.get<Person[]>(this.personUrl);
@@ -43,8 +30,8 @@ person2 : Person2 = new Person2();
   public createPerson(person) {
     return this.http.post<Person2>(this.postUrl, person);
   }
-  public getPersonBasedOnName(name : string) {
-    return this.http.get<Person[]>(this.personUrl + "/name");
+  public getPersonBasedOnName(person) {
+    return this.http.get<Person[]>(this.postUrl + "/search/" + person.first_name);
   }
 
 }

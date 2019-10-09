@@ -20,7 +20,10 @@ export class PersonaddComponent {
   createPerson(): void {
     this.personService.createPerson(this.person)
         .subscribe( data => {
-          alert("Person Added successfully.");
+
+          alert(this.person.first_name + " "+ this.person.last_name + " Added successfully.");
+          this.person.first_name = "";
+          this.person.last_name=" "
         });
 
   };

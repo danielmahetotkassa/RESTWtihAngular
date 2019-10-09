@@ -19,20 +19,9 @@ export class PersonComponent implements OnInit {
   }
 
   ngOnInit() {
-    // (3) Subscribe
-     this.personService.list().subscribe((persons: Person[]) => {
-      // (4) Store
-     this.persons = persons; 
 
-
-    //});
-
-   // this.personService.getPerson().subscribe((persons: Person[])=>{
-  //    this.persons = persons;
-
-   this.personService.getPerson().subscribe((person2: Person[])=>{
-     this.person2 = person2;
-   })
+    this.personService.getPerson().subscribe((person2: Person[])=>{
+      this.person2 = person2;
 
     });
   }
@@ -40,9 +29,17 @@ export class PersonComponent implements OnInit {
   deletePerson(person): void{
     this.personService.deletePerson(person)
     .subscribe( data => {
-      alert("PErson Deleted successfully.");
+      alert("Person Deleted successfully.");
+      this.ngOnInit();
     });
+    
 
+      //location.reload();
+
+    
+      
+
+ 
   }
 
 }
