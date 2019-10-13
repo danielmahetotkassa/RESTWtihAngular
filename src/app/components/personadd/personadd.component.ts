@@ -23,7 +23,7 @@ export class PersonaddComponent {
 
           alert(this.person.first_name + " "+ this.person.last_name + " Added successfully.");
           this.person.first_name = "";
-          this.person.last_name=" "
+          this.person.last_name=""
         });
 
   };
